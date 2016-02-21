@@ -22,7 +22,7 @@ end
 ```
 
 ### 异常的捕获
-对elixir的异常捕获，可采用try/rescue机制，如下是一个例子：
+对elixir的异常捕获,可采用try/rescue机制.下面是一个例子：
 ```elixir
   def demo(arg) do
     try do
