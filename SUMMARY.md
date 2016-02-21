@@ -6,3 +6,5 @@
 
 * [高级主题](advanced-topic.md)
     * [genserver](ADVANCED-TOPIC/genserver.md)）
+    * [元编程之引用](ADVANCED-TOPIC/quote-and-unquote.md)
+    * [元编程之宏](ADVANCED-TOPIC/macro.md)
