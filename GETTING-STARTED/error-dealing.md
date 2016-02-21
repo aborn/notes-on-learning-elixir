@@ -24,6 +24,7 @@ end
 ### 异常的捕获
 对elixir的异常捕获，可采用try/rescue机制，如下是一个例子：
 ```elixir
+  def demo(arg) do
     try do
       case arg do
         0 ->
@@ -38,8 +39,9 @@ end
       e in ExceptionExample -> e.message
       e in RuntimeError -> e.message
     end
+  end
 ```
-注意rescue后面对就的Error类型要对应，这里是ArgumentError.
+注意rescue后面的Error类型要对应.
 
 ## throws
 
