@@ -23,7 +23,7 @@ end
 
 ### 异常的捕获
 对elixir的异常捕获，可采用try/rescue机制，如下是一个例子：
-```
+```elixir
 try do
     String.to_integer("s")
 rescue
