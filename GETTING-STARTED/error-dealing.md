@@ -16,8 +16,8 @@ iex(1)> raise "exception example"
 ```
 定义自己的exception模块，相当简单，下面是一个例子：
 ```elixir
-defmodule ExampleException do
-    defexception message: "example exception."
+defmodule Nle.ExceptionExample do
+  defexception message: "example exception."
 end
 ```
 
