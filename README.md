@@ -16,5 +16,8 @@ Elixir语言学习笔记
 的简单中文翻译。它用来记录一些核心的语法，及高级主题。对于很简单，或者能用语言都有的部分
 不会纳入其中。
 
+## 代码
+本项目所有的代码在[nle目录下](https://github.com/aborn/notes-on-learning-elixir/tree/master/nle)
+
 ## 更新时间
 2016-02-21
