@@ -1,6 +1,7 @@
 # Summary
 
 * [基础语法](chapter1.md)
+    * [基本数据类型](GETTING-STARTED/basic-type.md)
     * [elixir的异常处理](GETTING-STARTED/error-dealing.md)
 
 * [高级主题](advanced-topic.md)
