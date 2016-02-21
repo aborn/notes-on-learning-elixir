@@ -24,11 +24,20 @@ end
 ### 异常的捕获
 对elixir的异常捕获，可采用try/rescue机制，如下是一个例子：
 ```elixir
-try do
-    String.to_integer("s")
-rescue
-    ArgumentError -> 0
-end
+    try do
+      case arg do
+        0 ->
+          raise Nle.ExceptionExample
+        1 ->
+          String.to_integer("s")
+        _ ->
+          raise "running time error"
+      end
+    rescue
+      e in ArgumentError -> e.message
+      e in ExceptionExample -> e.message
+      e in RuntimeError -> e.message
+    end
 ```
 注意rescue后面对就的Error类型要对应，这里是ArgumentError.
 
