@@ -1,8 +1,25 @@
 # elixir的错误处理
 [elixir有三种异常处理的机制](http://elixir-lang.org/getting-started/try-catch-and-rescue.html)
-分别是errors, throws和exits
+分别是Errors, throws和exits
 
 ## errors
+errors相当于java里的exception，不过，它是运行时抛出的，如下面的例子：
+```mix
+iex(1)> String.to_integer("s")
+** (ArgumentError) argument error
+    :erlang.binary_to_integer("s")
+```
+在运行时，想要抛出一个异常，只要调用raise/1，参数为消息
+```
+iex(1)> raise "exception example"
+** (RuntimeError) exception example
+```
+定义自己的exception模块，相当简单，下面是一个例子：
+```elixir
+defmodule do
+  defexception message: "example exception."
+end
+```
 
 ## throws
 
