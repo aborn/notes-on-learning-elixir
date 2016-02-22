@@ -12,3 +12,11 @@ iex(1)> quote do: sum(1, 2, 3)
 ```
 第一个元素为函数名；第二个为keyword list，代表元数据；第三个元素为参数列表。许多语言把这种表达
 式称为Abstract Syntax Tree(AST)，elixir称之为引用表达式。
+
+## 通用表达
+一般，上面的引用元组可以表达成以下结构：
+```
+{atom | tuple, list, list | atom}
+```
+其中:
+1. 第一个元素为一个原子类型或者同样结构的元组
