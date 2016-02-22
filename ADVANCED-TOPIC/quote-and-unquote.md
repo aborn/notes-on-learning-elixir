@@ -13,10 +13,29 @@ iex(1)> quote do: sum(1, 2, 3)
 第一个元素为函数名；第二个为keyword list，代表元数据；第三个元素为参数列表。许多语言把这种表达
 式称为Abstract Syntax Tree(AST)，elixir称之为引用表达式。
 
-## 通用表达
-一般，上面的引用元组可以表达成以下结构：
+下面是一个复杂一点的用户展开:
+```elixir
+iex(2)> quote do: sum(1, 2 + 3, 4)
+{:sum, [], [1, {:+, [context: Elixir, import: Kernel], [2, 3]}, 4]}
 ```
+
+## 引用的通用表达
+一般，上面的引用元组可以表达成以下结构：
+```elixir
 {atom | tuple, list, list | atom}
 ```
 其中:
-1. 第一个元素为一个原子类型或者同样结构的元组
+1. 第一个元素为一个原子类型或者同样结构的元组;
+2. 第二个元素为一个keyword list,它包含元数据、像numbers和contexts；
+3. 第三个元素或者为一个参数列表，或者为原子类型。当它是一个原子类型时，意味着这个引用表达式表示
+的是一个变量。
+
+注意，有下面5种elixir字面量类型，它们直接返回自己，不翻译成用户表达式：
+```elixir
+:sum         #=> Atoms
+1.0          #=> Numbers
+[1, 2]       #=> Lists
+"strings"    #=> Strings
+{key, value} #=> Tuples with two elements
+```
+大部分elixir代码是直接翻译成它对应的引用表达式。
