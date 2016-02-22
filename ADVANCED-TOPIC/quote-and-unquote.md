@@ -39,3 +39,20 @@ iex(2)> quote do: sum(1, 2 + 3, 4)
 {key, value} #=> Tuples with two elements
 ```
 大部分elixir代码是直接翻译成它对应的引用表达式。
+
+## 引用转义(unquote)
+有时候你想在一个引用中对某个变量进行转义，如下：
+```elixir
+iex(5)> number = 13
+13
+iex(6)> Macro.to_string(quote do: 11 + number)
+"11 + number"
+```
+
+这不是我们想要的，因为我们想把number变量换成它的值，那么可采用unquote实现：
+```elixir
+iex(7)> number = 13
+13
+iex(8)> Macro.to_string(quote do: 11 + unquote(number))
+"11 + 13"
+```
