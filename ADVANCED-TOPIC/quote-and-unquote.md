@@ -11,7 +11,7 @@ iex(1)> quote do: sum(1, 2, 3)
 {:sum, [], [1, 2, 3]}
 ```
 第一个元素为函数名；第二个为keyword list，代表元数据；第三个元素为参数列表。许多语言把这种表达
-式称为Abstract Syntax Tree(AST)，elixir称之为引用表达式。
+式称为抽象语法树Abstract Syntax Tree(AST)，elixir称之为引用表达式。
 
 下面是一个复杂一点的用户展开:
 ```elixir
